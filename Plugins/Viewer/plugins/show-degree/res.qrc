@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>show-degree.frag</file>
+        <file>show-degree.vert</file>
+    </qresource>
+</RCC>

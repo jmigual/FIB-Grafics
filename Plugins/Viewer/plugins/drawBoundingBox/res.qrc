@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>drawBB.vert</file>
+        <file>drawBB.frag</file>
+    </qresource>
+</RCC>
