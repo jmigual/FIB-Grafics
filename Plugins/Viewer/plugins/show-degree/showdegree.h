@@ -19,7 +19,11 @@ public:
   void onPluginLoad();
   void postFrame();
   
+  GLuint textureID;
   float m_degree;
+  QGLShaderProgram* program;
+  QGLShader* vs;
+  QGLShader* fs;
 };
 
 #endif // SHOWDEGREE_H
