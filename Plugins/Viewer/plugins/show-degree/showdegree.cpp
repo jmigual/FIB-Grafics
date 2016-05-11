@@ -12,7 +12,7 @@ void ShowDegree::onPluginLoad()
   
   Object &o = scene->objects().front();
   const vector<Face> &faces = o.faces();
-  vector<int> VCount(o.vertices(), 0);
+  vector<int> VCount(o.vertices().size(), 0);
   
   for (const Face &f : faces) {
     for (int i = 0; i < f.numVertices(); ++i) {
@@ -30,7 +30,7 @@ void ShowDegree::onPluginLoad()
 
 void ShowDegree::postFrame()
 {
-  QImage image(SIZE, QImage::Format_RGB32);
+  QImage image(SIZE, SIZE, QImage::Format_RGB32);
   image.fill(Qt::white);
   
   QPainter painter(&image);
