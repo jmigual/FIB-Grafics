@@ -1,0 +1,33 @@
+Sessió 1:
+1. Warming Up
+2. ModelInfo (1)
+3. Animate Vertices Plugin
+4. Show-degree
+5. Framerate
+   - ModelInfo (2)   
+   - Il·luminació per fragment amb shaders
+
+
+Sessió 2:
+* Shadow 
+* Shadow (2) 
+* Explode (1) 
+* Voxelize (1) 
+* Lego
+    - Explode 2
+    - Extrude
+    - Grass
+    - Progressive 
+    - Spikes
+    - Oscillating Shrink
+    - Spherical points
+    - Area
+
+
+Sessió 3:
+
+1. Draw bounding box
+
+2. Draw smooth
+
+3. Draw flat
