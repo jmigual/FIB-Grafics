@@ -1,8 +1,8 @@
-#include "drawBoundingBox.h"
+#include "resaltar-seleccio.h"
 #include "glwidget.h"
 #include <cmath>
 
-void DrawBBox::cleanUp()
+void ResaltarSeleccio::cleanUp()
 {
   glDeleteBuffers(m_size,  &m_coordBufferID);
   glDeleteVertexArrays(1, &m_VAO);
@@ -12,46 +12,46 @@ void DrawBBox::cleanUp()
   delete m_pProgram;
 }
 
-DrawBBox::~DrawBBox()
+ResaltarSeleccio::~ResaltarSeleccio()
 {
   cleanUp();
 }
 
-void DrawBBox::onSceneClear()
+void ResaltarSeleccio::onSceneClear()
 {
   cleanUp();
 }
 
-void DrawBBox::postFrame()
+void ResaltarSeleccio::postFrame()
 {
+  int selected = scene()->selectedObject();
+  if (selected < 0) return;
+  const Box &b = scene()->objects()[selected].boundingBox();
+  
   //glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
   glEnable (GL_BLEND);
   glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   
-  glBindVertexArray(m_VAO);
-  vector<Object> &O = scene()->objects();
   m_pProgram->bind();
   QMatrix4x4 MVP = camera()->projectionMatrix() * camera()->modelviewMatrix();
   m_pProgram->setUniformValue("modelViewProjectionMatrix", MVP);
   
-  for (Object &o : O) {
-    const Box &b = o.boundingBox();
-    
-    m_pProgram->setUniformValue("boundingBoxMax", b.max());
-    m_pProgram->setUniformValue("boundingBoxMin", b.min());
-    
-    glDrawArrays(GL_TRIANGLES, 0, m_size);
-  }
+  m_pProgram->setUniformValue("boundingBoxMax", b.max());
+  m_pProgram->setUniformValue("boundingBoxMin", b.min());
+  
+  glBindVertexArray(m_VAO);
+  glDrawArrays(GL_TRIANGLES, 0, m_size);
   
   m_pProgram->release();
   
   glDisable(GL_BLEND);
-  glBindVertexArray(0);
   //glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+  glBindVertexArray(0);
+  glBindBuffer(GL_ARRAY_BUFFER,0);
 }
 
 
-void DrawBBox::onPluginLoad()
+void ResaltarSeleccio::onPluginLoad()
 {
   vector<float> vertices;
   vector<vector<float>> triangles;
@@ -104,7 +104,7 @@ void DrawBBox::onPluginLoad()
 }
 
 #if QT_VERSION < 0x050000
-Q_EXPORT_PLUGIN2(drawBoundingBox, DrawBBox)   // plugin name, plugin class
+Q_EXPORT_PLUGIN2(resaltarSeleccio, ResaltarSeleccio)   // plugin name, plugin class
 #endif
 
 

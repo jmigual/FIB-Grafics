@@ -11,8 +11,5 @@ SUBDIRS += drawBoundingBox
 SUBDIRS += modelinfo
 # Afegiu a SUBDIRS els vostres plugins!
 
-
-
-
-
-
+SUBDIRS += mouse-select
+SUBDIRS += resaltar-seleccio

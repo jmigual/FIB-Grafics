@@ -1,12 +1,12 @@
-#ifndef _DRAW_VBO_EXT_H
-#define _DRAW_VBO_EXT_H
+#ifndef _RESALTAR_SELECCIO_H
+#define _RESALTAR_SELECCIO_H
 
 #include <vector>
 #include "basicplugin.h"
 
 using namespace std;
 
-class DrawBBox : public QObject, public BasicPlugin
+class ResaltarSeleccio : public QObject, public BasicPlugin
 {
   Q_OBJECT
 #if QT_VERSION >= 0x050000
@@ -15,7 +15,7 @@ class DrawBBox : public QObject, public BasicPlugin
   Q_INTERFACES(BasicPlugin)
   
 public:
-  ~DrawBBox();
+  ~ResaltarSeleccio();
   void cleanUp();
   void onPluginLoad();
   void onSceneClear();
