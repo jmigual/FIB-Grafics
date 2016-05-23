@@ -13,3 +13,4 @@ SUBDIRS += modelinfo
 
 SUBDIRS += mouse-select
 SUBDIRS += resaltar-seleccio
+SUBDIRS += keyboard-select
