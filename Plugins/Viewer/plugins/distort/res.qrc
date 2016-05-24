@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>distort.frag</file>
+        <file>distort.vert</file>
+    </qresource>
+</RCC>

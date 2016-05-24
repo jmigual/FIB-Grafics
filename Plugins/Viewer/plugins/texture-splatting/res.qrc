@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>splat.vert</file>
+        <file>splat.frag</file>
+    </qresource>
+</RCC>

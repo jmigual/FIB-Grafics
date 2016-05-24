@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>glowing.vert</file>
+        <file>glowing.frag</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shadowmap.frag</file>
+        <file>shadowmap.vert</file>
+    </qresource>
+</RCC>
