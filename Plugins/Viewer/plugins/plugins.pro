@@ -19,3 +19,4 @@ SUBDIRS += texture-splatting
 SUBDIRS += shadowmap
 SUBDIRS += glowing
 SUBDIRS += distort
+SUBDIRS += reflection

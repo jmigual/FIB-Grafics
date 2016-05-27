@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>reflection.vert</file>
+        <file>reflection.frag</file>
+    </qresource>
+</RCC>
