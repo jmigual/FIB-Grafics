@@ -14,13 +14,13 @@ class NavigateDefault : public QObject, public BasicPlugin
  public:
     NavigateDefault();
  
-    void	keyPressEvent ( QKeyEvent *  ) {};
-    void	keyReleaseEvent ( QKeyEvent *  ) {};
+    void	keyPressEvent ( QKeyEvent *  ) {}
+    void	keyReleaseEvent ( QKeyEvent *  ) {}
     
     void	mouseMoveEvent ( QMouseEvent * event );
     void	mousePressEvent ( QMouseEvent * event );
     void	mouseReleaseEvent ( QMouseEvent * event );
-    void	wheelEvent ( QWheelEvent *  ) {};
+    void	wheelEvent ( QWheelEvent *  ) {}
  
  private:
     typedef  enum {NONE, ROTATE, ZOOM, PAN} MouseAction;
